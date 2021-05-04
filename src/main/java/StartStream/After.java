@@ -1,16 +1,12 @@
 package StartStream;
 
+import static utils.User.allUsers;
+
 import java.util.List;
 import java.util.stream.Collectors;
+import utils.User;
 
 public class After {
-
-    static List<User> allUsers = List.of(
-            User.builder().active(false).name("Abc").build(),
-            User.builder().active(true).name("Bdb").build(),
-            User.builder().active(true).name("kab").build(),
-            User.builder().active(true).name("Aoo").build()
-    );
 
     public static void main(String[] args) {
 
