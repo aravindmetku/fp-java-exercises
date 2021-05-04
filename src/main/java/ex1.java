@@ -3,8 +3,8 @@ import io.vavr.Tuple2;
 import java.util.Locale;
 
 /*
-* todo: Add example
-* */
+ * todo: Add example
+ * */
 public class ex1 {
     public static void main(String[] args) {
         // add your example
