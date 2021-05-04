@@ -1,6 +1,5 @@
 import java.util.function.*;
 
-// Tested with JDK 1.8.0-ea-b75
 class CurryingAndPartialFunctionApplication {
     public static void main(String[] args) {
         IntBinaryOperator simpleAdd = (a, b) -> a + b;
