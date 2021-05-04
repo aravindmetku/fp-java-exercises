@@ -1,6 +1,7 @@
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
+import javax.swing.text.html.Option;
 
 
 class OptionalDemoJava8 {
@@ -10,15 +11,17 @@ class OptionalDemoJava8 {
         Address johnaddress = new Address("52/A, 22nd Street",
                 "Mumbai", "India", 400001);
 
-        Person john = new Person("John", Optional.of(johnaddress), 874731232);
+        Person john = new Person("John", johnaddress, 874731232);
 
-        Person mac = new Person("Mac", Optional.empty(), 333299911);
-        Person gautam = new Person("Gautam", Optional.empty(), 533299911);
+        Person mac = new Person("Mac", null, 333299911);
+        Person gautam = new Person("Gautam", null, 533299911);
 
         List<Person> people = new ArrayList<>();
         people.add(john);
         people.add(mac);
         people.add(gautam);
+
+        System.out.println(Optional.ofNullable(null));
 
         people.stream().forEach((p) -> {
             System.out.printf("%s from %s %n",
@@ -34,12 +37,12 @@ class Person {
     private final Optional<Address> address;
     private final int phone;
 
-    public Person(String name, Optional<Address> address, int phone) {
+    public Person(String name, Address address, int phone) {
         if (name == null) {
             throw new IllegalArgumentException("Null value for name is not permitted");
         }
         this.name = name;
-        this.address = address;
+        this.address = Optional.ofNullable(address);
         this.phone = phone;
     }
 
